@@ -1,6 +1,7 @@
 const express = require('express');
 const app = express();
 const PORT = 3000;
+const path = require('path');
 
 app.get('/health', (req, res) => {
     const now = new Date();
@@ -10,6 +11,11 @@ app.get('/health', (req, res) => {
     const timeString = `${hh}:${mm}:${ss}`;
 
     res.status(200).send(`OK - ${timeString} \n`);
+});
+
+app.get('/', (req, res) => {
+
+    res.sendFile(path.join(__dirname, 'static/test.jpg'));
 });
 
 app.listen(PORT, () => {
