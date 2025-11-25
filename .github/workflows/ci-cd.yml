@@ -54,7 +54,7 @@ jobs:
           docker compose pull express-healthcheck-\$TARGET
           docker compose up -d express-healthcheck-\$TARGET
           
-          if [ "\$STOP" !="none ]; then
+          if [ "\$STOP" !="none" ]; then
             echo "Running health check..."
             for i in {1..10}; do
               sleep 2
