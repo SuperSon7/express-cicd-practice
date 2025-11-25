@@ -20,7 +20,7 @@ jobs:
       - name: Build and Push Image
         run: |
           docker build -t ${{ secrets.DOCKER_USERNAME }}/express-healthcheck:latest .
-          docker push ${{ secrets.DOCKER_USRENAME }}/express-healthcheck:latest
+          docker push ${{ secrets.DOCKER_USERNAME }}/express-healthcheck:latest
 
   deploy:
     needs: build-and-push
